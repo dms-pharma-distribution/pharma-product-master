@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: pharma-product-master 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/smartpharmadb?searchpath=product_schema
+    username: postgres
+    password: admin
+  jpa:
+    open-in-view: false
+    hibernate:
+      enable_lazy_load_no_trans: true
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect        
+    show-sql: true   
+server:
+  port: 8084
+  servlet:
+    context-path: /pharma/product
+springdoc:
+  api-docs:
+    path: /pharma/product/swagger-ui.html   
